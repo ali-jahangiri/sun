@@ -14,9 +14,22 @@ const triggerFontSize = {
     large : fontSize[3]
 }
 
+
+const borderRadius = {
+    0 : 0,
+    1 : 3,
+    2 : 6,
+    3 : 9,
+    4 : 12,
+    5 : 15,
+    6 : 18,
+    7 : 21
+}
+
 const systemSize = {
     fontSize ,
-    triggerFontSize
+    triggerFontSize,
+    borderRadius ,
 }
 
 

@@ -16,8 +16,8 @@ const base = {
 
 const business = {
     primary : "#865439",
-    secondary: "#C68B59",
-    tertiary : "#8FC1D4",
+    secondary: "#8FC1D4",
+    tertiary : "#C68B59",
 }
 
 const systemColor = {
