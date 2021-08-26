@@ -26,10 +26,20 @@ const borderRadius = {
     7 : 21
 }
 
+
+const absolute = {
+    0 : 0,
+    25 : 25,
+    50 : 50, 
+    75 : 75,
+    100 : 100
+}
+
 const systemSize = {
     fontSize ,
     triggerFontSize,
     borderRadius ,
+    absolute
 }
 
 

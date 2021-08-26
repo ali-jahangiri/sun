@@ -4,26 +4,17 @@ import { StyleSheet } from 'react-native';
 import { InitialLoader , SafeAreaRender } from './providers';
 import StyleProvider from './providers/Style/StyleProvider';
 import AppRoute from './Routes/AppRoute';
+import { Home } from './Screens';
 import { systemColor, systemSize, systemSpace, systemVariant } from './style';
 
-// const appStyleModel = createAppStyleModel({
-//   color: {
-//     base,
-//     business
-//   },
-//   size : {
-
-//   }
-// })
-
-
 export default function App() {
+
   return (
     <StyleProvider appStyleModel={{ color : systemColor , variant : systemVariant , size : systemSize , space : systemSpace }}>
       <SafeAreaRender style={style.container}>
-        <InitialLoader>
-          <AppRoute />
-        </InitialLoader>
+          <InitialLoader>
+              <Home />
+          </InitialLoader>
         <StatusBar style="auto" />
       </SafeAreaRender>
     </StyleProvider>

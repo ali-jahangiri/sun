@@ -3,15 +3,17 @@ import { createContext } from 'react';
 
 export const StyleGateContext = createContext();
 
+
 import  { systemColor , systemSize , systemSpace , systemVariant } from '../../style';
 
-const StyleGate = ({ children , model = { size : { ...systemSize } , color : { ...systemColor } , space : { ...systemSpace } , variant : { ...systemVariant } } }) => {
-    return (
-        <StyleGateContext.Provider value={{ ...model}}>
+const base = { size : { ...systemSize } , color : { ...systemColor } , space : { ...systemSpace } , variant : { ...systemVariant } };
+
+
+const StyleGate = ({ children , extend }) => (
+    <StyleGateContext.Provider value={{ ...base , ...extend?.(base) }}>
             {children}
-        </StyleGateContext.Provider>
-    )
-}
+    </StyleGateContext.Provider>
+)
 
 
 export default StyleGate;
