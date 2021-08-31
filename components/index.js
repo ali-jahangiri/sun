@@ -3,6 +3,7 @@ import Container from "./Container";
 import Trigger from "./Trigger";
 import Divider from "./Divider";
 import Row from "./Row";
+import Picture from "./Picture";
 
 
 export {
@@ -10,5 +11,6 @@ export {
     Container,
     Trigger,
     Divider,
-    Row
+    Row,
+    Picture
 }

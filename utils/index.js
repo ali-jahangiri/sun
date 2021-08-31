@@ -3,7 +3,10 @@ function idGenerator () {
   };
 
 function styleModifier(baseOn , modifier) {
-    if(baseOn) return modifier;
+    if(Array.isArray(baseOn)) {
+        return baseOn.every(el => Boolean(el) === false ? undefined : true) ? modifier : undefined;
+    }
+    else if(baseOn) return modifier;
     else return undefined;
 }
 

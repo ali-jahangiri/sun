@@ -1,7 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, View } from 'react-native';
-import useDynamicStyle from '../Hooks/useDynamicStyle';
-import useStyleInitializer from '../Hooks/useStyleInitializer';
+import useStyleOverwrite from '../Hooks/useStyleOverwrite';
 import { systemHelperDevelopValue } from '../style';
 
 const RenderNativeComponent = (props , wrappedWidth) => {
@@ -14,30 +13,17 @@ const RenderNativeComponent = (props , wrappedWidth) => {
 }
 
 const Row = ({ children , direction , as = "View" , _initializeStyle , style , ...rest }) => {
+    const appendedStyle = useStyleOverwrite({ style , overwrite : ({ variant }) => ({
+        flexDirection : systemHelperDevelopValue.directionFlexRow[variant.appDirection]
+    })})
     
-    // const internalStyle = useStyleInitializer(_initializeStyle , ({ variant }) => ({
-    //     container : {
-    //         flexDirection : direction || systemHelperDevelopValue.directionFlexRow[variant.appDirection]
-    //     }
-    // }))
-
-
-    // const ss = useDynamicStyle({ style })
-
+    
     return RenderNativeComponent({
-        style : ss,
+        style : appendedStyle,
         children,
         ...rest,
     } , as);
 }
 
-
-const style = () => ({
-    base : {
-        container : {
-
-        }
-    }
-})
 
 export default Row;

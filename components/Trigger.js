@@ -35,10 +35,10 @@ const Trigger = ({
         disabled , 
         round ,
         icon = "",
-        alignment = "center",
+        iconOnlyAlignment = "center",
         _overwrite }) => {
 
-    const appendedStyle = useDynamicStyle({ style , modifier : { size , type , disabled , round , isIconOnly : !children , alignment } , _overwrite });
+    const appendedStyle = useDynamicStyle({ style , modifier : { size , type , disabled , round , isIconOnly : !children , iconOnlyAlignment } , _overwrite });
 
     const Icon = useIcon(icon, { size : 25 ,style : appendedStyle.icon });
 
@@ -82,7 +82,6 @@ const style = ({ context : { size : systemSize , color } }) => ({
         container : {
             width : "100%",
             padding : 10,
-            // alignItems : "flex-start",
             justifyContent : 'center',
         },
         iconContainer : {
@@ -92,7 +91,7 @@ const style = ({ context : { size : systemSize , color } }) => ({
             color: color.base.black
         }
     }),
-    modifier: ({ round , type , disabled , isIconOnly , alignment }) => [
+    modifier: ({ round , type , disabled , isIconOnly , iconOnlyAlignment }) => [
         styleModifier(round , {
             container : {
                 borderRadius : systemSize.borderRadius[round],
@@ -113,9 +112,8 @@ const style = ({ context : { size : systemSize , color } }) => ({
         }),
         styleModifier(isIconOnly , {
             container : {
-                // alignSelf : systemHelperDevelopValue.directionX[alignment]
-                alignSelf : "flex-start",
-                flex : 1,
+                width: "auto",
+                alignSelf : systemHelperDevelopValue.directionX[iconOnlyAlignment]
             },
         }),
         styleModifier(disabled , {

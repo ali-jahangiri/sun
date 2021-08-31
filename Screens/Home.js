@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
-import { Text } from 'react-native';
-import { Trigger , Container, Paragraph, Divider } from '../components';
+
+import { Trigger , Container, Paragraph } from '../components';
 
 import useComponentCommand from '../Hooks/useComponentCommand';
 import StyleGate from '../providers/Style/StyleGate';
-import { Feather } from '@expo/vector-icons';
 
 const Home = () => {
     const [count, setCount] = useState(0);
     const commends = useComponentCommand();
-
     
     // const targetStyleGate = ({ color }) => ({
     //     color : {
@@ -25,29 +23,23 @@ const Home = () => {
     //     }
     // })
 
+   
+
     return (
         // <StyleGate >
             <Container reference={commends}>
-            <>
-                    {/* <Paragraph>
-                        Ducimus totam in modi consequatur odit quia pariatur. Rerum ut error praesentium voluptates. Sapiente aut laudantium ipsa.
-                        Ducimus totam in modi cons odit quia pariatur. Rerum ut error praesentium voluptates. Sapiente aut laudantium ipsa.
-                        Ducimus totam in modi consequatur odit quia pariatur. Rerum ut error praesentium voluptates. Sapiente aut laudantium ipsa
-                    </Paragraph> */}
-                    {/* <Divider vertical="horizontal" /> */}
-                    <Text>{count}</Text>
+                    <Paragraph>Architecto cum eos repellat debitis. Recusandae animi laudantium architecto expedita itaque. Suscipit et inventore qui eius. Aut quia distinctio ea ipsa quis enim hic. Veritatis eaque aspernatur expedita qui. Molestiae eligendi quo et dolorem aut et provident recusandae quia.Non autem praesentium do</Paragraph>
                     <Trigger
-                        alignment="left"
+                        iconOnlyAlignment="right"
                         icon="arrow-down-left"
-                        disabled={count === 5}
-                        round="8" 
+                        disabled={count === 10}
+                        round="10" 
                         size="large"
                         onPress={() => setCount(prev => prev + 1)}
                         // _overwrite={{container: {backgroundColor: 'red'}}} 
                         >
                             non.
                         </Trigger>
-            </>
             </Container>
         // {/* </StyleGate> */}
     )

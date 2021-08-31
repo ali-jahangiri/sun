@@ -19,8 +19,9 @@ const useDynamicStyle = ({style  , modifier , _overwrite = false ,  }) => {
         const { base : passedBase , modifier : modifierPassed } = style({ context : providedStyleFromContext });
         
         // Fallback for when we don't have any modifier inside injected style
+        // When already provided style form parent scop and just want pass '_overwrite' properties to make new style for current context and scop
+        if(typeof style === "object") return style;
         if(!modifier) return passedBase;
-
 
         const target = {
             base : passedBase ,
@@ -43,7 +44,7 @@ const useDynamicStyle = ({style  , modifier , _overwrite = false ,  }) => {
 
         return baseStyle
 
-    } , [...Object.values(modifier) , _overwrite])
+    } , [...Object.values(modifier || {}) , _overwrite])
 
 
     if(_overwrite) {

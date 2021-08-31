@@ -1,5 +1,6 @@
 const base = {
     yellow : "#FFF176",
+    white : "#ffffff",
     red : "#E57373",
     green : "#81C784",
     blue : "#64B5F6",
