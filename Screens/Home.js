@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Trigger , Container, Paragraph, Checkbox } from '../components';
+import { Trigger , Container, Paragraph, Checkbox, Input } from '../components';
 import Radio from '../components/Radio';
 
 import useComponentCommand from '../Hooks/useComponentCommand';
@@ -9,6 +9,8 @@ import StyleGate from '../providers/Style/StyleGate';
 const Home = () => {
     const [count, setCount] = useState(0);
     const commends = useComponentCommand();
+
+    const [value, setValue] = useState("");
 
     const [selected, setSelected] = useState(false);
 
@@ -41,12 +43,17 @@ const Home = () => {
                         }}
                         label="Close on Time" />
                     */}
-                    <Radio
+                    {/* <Radio
                         disable={count >= 5}
                         selected={selected} 
                         onChange={() => setSelected(prev => !prev)}
                         label="Call only inside bitch" />
-                    <Checkbox disable={count >= 5} selected={selected} onChange={() => setSelected(prev => !prev)} label={`This is label ${selected ? "true" : "false"}`} />
+                    <Checkbox disable={count >= 5} selected={selected} onChange={() => setSelected(prev => !prev)} label={`This is label ${selected ? "true" : "false"}`} /> */}
+                    <Input 
+                        value={value}
+                        onChange={setValue}
+                        error={value.length > 10}
+                        placeholder="UserName" />
                     <Trigger
                         iconOnlyAlignment="right"
                         icon="arrow-down-left"

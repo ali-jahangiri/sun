@@ -6,6 +6,8 @@ import Row from "./Row";
 import Picture from "./Picture";
 import Radio from "./Radio";
 import Checkbox from "./Checkbox";
+import Input from "./Input";
+import ParagraphAnimated from "./ParagraphAnimated";
 
 export {
     Paragraph,
@@ -15,5 +17,7 @@ export {
     Row,
     Picture,
     Radio,
-    Checkbox
+    Checkbox,
+    Input,
+    ParagraphAnimated,
 }

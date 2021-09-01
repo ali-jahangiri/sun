@@ -16,7 +16,7 @@ const Paragraph = ({ children , size = '4' , weight = "regular" , color = "black
 
 
 
-const style = ({context : { size : systemSize , color : systemColor }}) => ({
+export const style = ({context : { size : systemSize , color : systemColor }}) => ({
     base : StyleSheet.create({
         text : {
             marginBottom : -5,
@@ -45,32 +45,5 @@ const style = ({context : { size : systemSize , color : systemColor }}) => ({
         })
     ])
 })
-
-// const style = ({ context : {  } }) => ({
-//     base : {
-//         text : {
-//             marginBottom : -5
-//         }
-//     },
-//     modifier : ({ size , weight , color }) => ({
-//         ...styleModifier(size , {
-
-//         }),
-//         ...styleModifier(weight , {
-
-//         }),
-//         ...styleModifier(color , {
-
-//         })
-//     })
-// })
-
-// const style  = ({ modifier : { size , weight , color } , context : { color : systemColor , size : systemSize } }) => StyleSheet.create({
-//     text : {
-    //         color : systemColor.base[color],
-    //         fontFamily : weight,
-    //         fontSize : systemSize.fontSize[size],
-    //     }
-// })
 
 export default Paragraph;
