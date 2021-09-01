@@ -3,14 +3,14 @@ import { StyleSheet, Text } from 'react-native';
 import useDynamicStyle from '../Hooks/useDynamicStyle';
 import { styleModifier } from '../utils';
 
-/**
- * @param {{size: "1" | "2" | "3" | "4" | "5" | "6" , weight : 'bold' | 'regular' | "light" , color : string }} props 
-*/
+// /**
+//  * @param {{size: "1" | "2" | "3" | "4" | "5" | "6" , weight : 'bold' | 'regular' | "light" , color : string }} props 
+// */
 
 
  
-const Paragraph = ({ children , size = '4' , weight = "regular" , color = "black" , disabled }) => {
-    const appendedStyle = useDynamicStyle({ style , modifier : { size , weight , color , disabled }});
+const Paragraph = ({ children , size = '4' , weight = "regular" , color = "black" , disabled , _overwrite }) => {
+    const appendedStyle = useDynamicStyle({ style , modifier : { size , weight , color , disabled } , _overwrite});
     return <Text style={appendedStyle.text}>{children}</Text>
 }
 

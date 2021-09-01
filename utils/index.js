@@ -14,6 +14,10 @@ function deepClone (object) {
     return JSON.parse(JSON.stringify(object))
 }
 
+function generateColor(color , tone) {
+    return `${color}${tone}0`
+}
+
 // function createAppStyleModel({ color : { base : {} , business : {} } , size: {fontSize , triggerFontSize , borderRadius} , variant : { fadeOpacity , fadeTriggerOnActivePressState } }) {
 //     return {
 
@@ -22,6 +26,7 @@ function deepClone (object) {
 
 export {
     styleModifier,
-    deepClone
+    deepClone,
+    generateColor,
     // createAppStyleModel
 }

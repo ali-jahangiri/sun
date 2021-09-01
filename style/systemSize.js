@@ -7,6 +7,12 @@ const fontSize = {
     6 : 10
 }
 
+const borderWidth = {
+    none : 0,
+    light : 1,
+    default : 2,
+    bold : 3
+}
 
 const triggerFontSize = {
     small : fontSize[6],
@@ -38,11 +44,22 @@ const absolute = {
     100 : 100
 }
 
+
+const componentSize = {
+    checkbox : {
+        small : 30,
+        default : 40,
+        large : 50
+    },
+}
+
 const systemSize = {
     fontSize ,
     triggerFontSize,
     borderRadius ,
-    absolute
+    absolute,
+    componentSize,
+    borderWidth
 }
 
 

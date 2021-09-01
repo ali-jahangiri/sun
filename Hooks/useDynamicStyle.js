@@ -11,11 +11,11 @@ const useDynamicStyle = ({style  , modifier , _overwrite = false ,  }) => {
 
     if(!style) throw new Error("Style callback don't provided , Please first Provide a Style constructor!")
 
+    const providedStyleFromContext = {
+        ...styleProviderContext,
+        ...gateStyleContext
+    }
     const styleForInjection = useMemo(() => {
-        const providedStyleFromContext = {
-            ...styleProviderContext,
-            ...gateStyleContext
-        }
         const { base : passedBase , modifier : modifierPassed } = style({ context : providedStyleFromContext });
         
         // Fallback for when we don't have any modifier inside injected style
@@ -49,7 +49,7 @@ const useDynamicStyle = ({style  , modifier , _overwrite = false ,  }) => {
 
     if(_overwrite) {
         // Overwrite style in must priority way
-        Object.entries(_overwrite)
+        Object.entries(typeof _overwrite === "function" ? _overwrite(providedStyleFromContext) || {} : _overwrite)
             .map(([key , value]) => {
                 styleForInjection[key] = {
                     ...styleForInjection[key],

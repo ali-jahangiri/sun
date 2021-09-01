@@ -12,7 +12,7 @@ const RenderNativeComponent = (props , wrappedWidth) => {
     return WrappedNativeComponent[wrappedWidth]
 }
 
-const Row = ({ children , direction , as = "View" , _initializeStyle , style , ...rest }) => {
+const Row = ({ children , direction , as = "View" , _initializeStyle , style = {} , ...rest }) => {
     const appendedStyle = useStyleOverwrite({ style , overwrite : ({ variant }) => ({
         flexDirection : systemHelperDevelopValue.directionFlexRow[variant.appDirection]
     })})
